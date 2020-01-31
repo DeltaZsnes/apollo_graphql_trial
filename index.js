@@ -60,14 +60,14 @@ input CourseCompare {
 }
 
 type Query {
-  searchCourse(
+  queryCourse(
     skip: Int
     take: Int
   ): CoursePage!
 }
 
 type Mutation {
-  patchCourse(course: CourseInput!): Course!
+  mutateCourse(course: CourseInput!): Course!
 }
 
 
@@ -181,13 +181,7 @@ const courseGet = (args) => {
 	};
 };
 
-const patchCourse = async (args) => {
-	console.log(args);
-	var list = courseList;
-	return list[0];
-};
-
-const searchCourse = async (obj, args, context, info) => {
+const queryCourse = async (obj, args, context, info) => {
 	console.log({obj, args, context, info});
 	
 	const {
@@ -205,14 +199,18 @@ const searchCourse = async (obj, args, context, info) => {
 	};
 };
 
+const mutateCourse = async (args) => {
+	console.log(args);
+	var list = courseList;
+	return list[0];
+};
 
-// A map of functions which return data for the schema.
 const resolvers = {
   Query: {
-    searchCourse,
+    queryCourse,
   },
   Mutation: {
-    patchCourse,
+    mutateCourse,
   },
   Course:{
     human: () => "Human Rick Hunter",
