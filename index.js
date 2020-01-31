@@ -23,6 +23,7 @@ type Course implements Entity {
   topic: String
   url: String
   description: String
+  human: String
 }
 
 input CourseInput {
@@ -186,8 +187,8 @@ const patchCourse = async (args) => {
 	return list[0];
 };
 
-const searchCourse = async (root, args, context, info) => {
-	console.log({args, root, context, info});
+const searchCourse = async (obj, args, context, info) => {
+	console.log({obj, args, context, info});
 	
 	const {
 		skip,
@@ -212,6 +213,9 @@ const resolvers = {
   },
   Mutation: {
     patchCourse,
+  },
+  Course:{
+    human: () => "Human Rick Hunter",
   }
 };
 
