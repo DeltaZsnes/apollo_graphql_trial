@@ -1,0 +1,23 @@
+{
+  "name": "apollo_graphql_trial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeltaZsnes/apollo_graphql_trial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeltaZsnes/apollo_graphql_trial/issues"
+  },
+  "homepage": "https://github.com/DeltaZsnes/apollo_graphql_trial#readme",
+  "dependencies": {
+    "apollo-server": "^2.9.16",
+    "graphql": "^14.6.0"
+  }
+}
